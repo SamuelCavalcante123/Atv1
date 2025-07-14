@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url("img/coffee-hero-bg.jpg") no-repeat center/cover;
+  overflow-x: hidden;
+}
+
+/* Estilizando o header fixo no topo */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+}
+
+/* Navbar com espaçamento e alinhamento */
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Texto da logo */
+.navbar .logo {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Destaque na logo */
+.navbar .logo span {
+  color: #c06b3e;
+}
+
+/* Lista de links da navbar */
+.navbar .menu-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+/* Links da navbar */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+/* Hover nos links */
+.navbar a:hover {
+  color: #c06b3e;
+}
+
+/* Ícone de menu mobile */
+#menu-btn {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Botão de fechar menu mobile */
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Conteúdo principal da página index.html */
+.hero-section {
+  height: 100vh; /* tela cheia */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Texto e botão dentro da seção principal */
+.hero-section .content {
+  color: #fff;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Título principal */
+.hero-section .content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* Parágrafo */
+.hero-section .content p {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* Botão de ação */
+.hero-section .content button {
+  background: #c06b3e;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover do botão */
+.hero-section .content button:hover {
+  background: #a1562c;
+}
+
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  /* Efeito de fundo borrado ao abrir o menu mobile */
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 998;
+  }
+
+  /* Ícones de abrir/fechar menu mobile */
+  #menu-btn, #close-menu-btn {
+    display: block;
+  }
+
+  /* Menu lateral mobile */
+  .navbar .menu-links {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    flex-direction: column;
+    width: 260px;
+    height: 100vh;
+    background: #fff;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+    z-index: 999;
+  }
+
+  /* Quando o menu mobile estiver aberto */
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  /* Links no mobile */
+  .navbar a {
+    color: #000;
+  }
+
+  /* Centralização do texto na seção principal */
+  .hero-section .content {
+    text-align: center;
+  }
+
+  .hero-section .content h1 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}
+
+/* Centralização geral da tela de login */
+main.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Caixa do formulário */
+main.container form {
+  width: 420px;
+  background-color: rgba(255, 255, 255, 0.1); /* fundo semitransparente */
+  border: 2px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 10px;
+  padding: 30px;
+  backdrop-filter: blur(10px); /* efeito vidro fosco */
+  color: #fff;
+}
+
+/* Título do formulário */
+main.container form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container de inputs */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Estilizando os campos de entrada */
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Ícones dentro dos inputs */
+.input-box i {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+
+/* Lembrar senha e link */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* Link de recuperação */
+.remember-forgot a {
+  color: #c06b3e;
+  text-decoration: none;
+}
+
+/* Botão de login */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #c06b3e;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover no botão */
+button[type="submit"]:hover {
+  background: #a1562c;
+}
+
+/* Link de cadastro */
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #c06b3e;
+  text-decoration: none;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Atividade site do Café</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'rel='stylesheet'> <!--importação da biblioteca de icones para tela de login-->
+
+        <!--Importando a fonte de ícones do Google-->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    </head>
+    <body>
+        <!--Criando o rodapé da parte de cima, meio que um cabeçalho-->
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo">Coffee<span>.</span></a> <!--Adicionando botão de redirecionamento quando clica na logo, volta para o início-->
+
+                <!--Menu lateral (visível apenas no mobile)-->
+                <ul class="menu-links">
+                    
+                    <!--Botão de fechar o menu lateral-->
+                    <span id="close-menu-btn"
+                        class="material-symbols-outlined">close
+                    </span>
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!--Botão de abrir o menu lateral no mobile (três barrinhas)-->
+                <span id="menu-btn"
+                    class="material-symbols-outlined">menu</span>
+            </nav>
+        </header>
+
+        <!--Seção principal do conteúdo do site-->
+        <section class="hero-section">
+            <div class="content">
+                <h1>Comece seu dia com um delicioso café</h1>
+                <p>
+                    Café é uma bebida popular e amada por pessoas ao redor de
+                    todo o mundo. Acordando seus sentidos com um copo de líquido
+                    motivador.
+                </p>
+
+                <a href="login.html"> <!--Colocando um link para quando clicar no botão, redirecionar para página de login-->
+                    <button>Compre Agora</button>
+                </a>
+            </div>
+        </section>
+
+        <!--Script JS responsável por abrir e fechar o menu lateral-->
+        <script>
+    const header = document.querySelector("header");
+    const menuBtn = document.querySelector("#menu-btn");
+    const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+    // Quando clicar no botão de menu, adiciona ou remove a classe de menu aberto
+    menuBtn.addEventListener("click", () => {
+      header.classList.toggle("show-mobile-menu");
+    });
+
+    // Quando clicar no botão de fechar, disparamos o clique do botão de abrir (fecha o menu)
+    closeMenuBtn.addEventListener("click", () => {
+      menuBtn.click();
+    });
+  </script>
+
+    </body>
+</html>

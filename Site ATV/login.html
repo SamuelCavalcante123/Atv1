@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Importando o CSS -->
+    <title>Atividade do site Login</title> <!-- Título da página -->
+</head>
+<body>
+
+    <!--Fazendo a main do formulário-->
+    <main class="container">
+
+        <!--Criação do formulário para colocar as informações-->
+        <form>
+            <h1>Login</h1>
+            
+            <div class="input-box">
+                <!--criação da div para colocar as informações de usuário e o ícone-->
+                <input placeholder="Usuário" type="email">
+                <!--acréscimo do input usuário do tipo email-->
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <!--criação da div para colocar as informações da senha e o ícone-->
+                <input placeholder="Senha" type="password">
+                <!--acréscimo do input senha do tipo password, lembrando que esse tipo é o que deixa as bolinhas-->
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <!--criação da div para acréscimo do checkbox de lembrar minha senha-->
+                <label>
+                    <!--colocação do texto-->
+                    <input type="checkbox">
+                    Lembrar minha senha
+                </label>
+                <a href="#">Esqueci minha senha</a> <!--link do esqueci minha senha-->
+            </div>
+
+            <button type="submit">Login</button> <!--acréscimo do botão para enviar o login para o formulário-->
+
+            <div class="register-link">
+                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p> <!--link de cadastro-->
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>
